@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t  nehaaws/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run nehaaws/docker-react npm run test -- --coverage
