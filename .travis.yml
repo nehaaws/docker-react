@@ -6,4 +6,4 @@ before_install:
   - docker build -t neha/docker_react -f Dockerfile.dev .
 
 script:
-  - docker run neha/docker_react npm run test -- --coverage
+  - docker run  -e CI=true neha/docker_react npm run test -- --coverage
